@@ -75,6 +75,12 @@ class ClientController extends Controller
         $bills = Bill::where('client_id', '=', $client->id)->get();
         return response()->json($bills);
     }
+  
+    public function expensive($value)
+    {
+        $expensive = Bill::where('value', '>', $value)->get();
+        return response()->json($expensive);
+    }
 
     /**
      * Show the form for editing the specified resource.

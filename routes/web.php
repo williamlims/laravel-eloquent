@@ -32,3 +32,6 @@ Route::get('/clients/search/{text}', [ClientController::class, 'search']);
 //Route::get('/clients/bills/{client}', [BillController::class, 'bills']);
 
 Route::get('/clients/bills/{client}', [ClientController::class, 'bills']);
+
+Route::get('/bills/expensive/{value}', [ClientController::class, 'expensive']);
+
