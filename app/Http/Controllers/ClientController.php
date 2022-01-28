@@ -63,6 +63,12 @@ class ClientController extends Controller
         return response()->json($client);
     }
 
+    public function search($text)
+    {
+        $client = Client::where('name', 'LIKE', '%'.$text.'%')->get();
+        return response()->json($client);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
