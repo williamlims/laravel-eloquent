@@ -29,4 +29,6 @@ Route::get('/clients/name/{name}', [ClientController::class, 'name']);
 
 Route::get('/clients/search/{text}', [ClientController::class, 'search']);
 
-Route::get('/clients/bills/{client}', [BillController::class, 'bills']);
+//Route::get('/clients/bills/{client}', [BillController::class, 'bills']);
+
+Route::get('/clients/bills/{client}', [ClientController::class, 'bills']);

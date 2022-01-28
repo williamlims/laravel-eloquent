@@ -51,12 +51,12 @@ class BillController extends Controller
         //
     }
 
-    public function bills($client)
-    {
-        $client = Client::find($client);
-        $bills = Bill::where('client_id', '=', $client)->get();
-        return response()->json($bills);
-    }
+    //public function bills($client)
+    //{
+    //    $client = Client::find($client);
+    //    $bills = Bill::where('client_id', '=', $client)->get();
+    //    return response()->json($bills);
+    //}
 
     /**
      * Show the form for editing the specified resource.
