@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BillController;
 use App\Http\Controllers\ClientController;
 
 /*
@@ -27,3 +28,5 @@ Route::get('/clients/show/{client}', [ClientController::class, 'show']);
 Route::get('/clients/name/{name}', [ClientController::class, 'name']);
 
 Route::get('/clients/search/{text}', [ClientController::class, 'search']);
+
+Route::get('/clients/bills/{client}', [BillController::class, 'bills']);

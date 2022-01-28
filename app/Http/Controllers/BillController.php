@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bill;
+use App\Models\Client;
 use App\Http\Requests\StoreBillRequest;
 use App\Http\Requests\UpdateBillRequest;
 
@@ -48,6 +49,13 @@ class BillController extends Controller
     public function show(Bill $bill)
     {
         //
+    }
+
+    public function bills($client)
+    {
+        $client = Client::find($client);
+        $bills = Bill::where('client_id', '=', $client)->get();
+        return response()->json($bills);
     }
 
     /**
