@@ -57,6 +57,12 @@ class ClientController extends Controller
         return response()->json($client);
     }
 
+    public function name($name)
+    {
+        $client = Client::where('name', '=', $name)->first();
+        return response()->json($client);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
