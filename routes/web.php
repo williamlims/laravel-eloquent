@@ -23,6 +23,8 @@ Route::get('/clients/create', [ClientController::class, 'create']);
 
 Route::post('/clients/store', [ClientController::class, 'store']);
 
+Route::get('/clients/order', [ClientController::class, 'order']);
+
 Route::get('/clients/show/{client}', [ClientController::class, 'show']);
 
 Route::get('/clients/name/{name}', [ClientController::class, 'name']);
@@ -38,4 +40,6 @@ Route::get('/bills/expensive/{value}', [ClientController::class, 'expensive']);
 Route::get('/bills/create', [BillController::class, 'create']);
 
 Route::post('/bills/store', [BillController::class, 'store']);
+
+Route::get('/bills/between/{value1}/{value2}', [BillController::class, 'between']);
 

@@ -48,6 +48,12 @@ class ClientController extends Controller
         return response()->json($client);
     }
 
+    public function order()
+    {
+        $clients = Client::orderBy('name')->limit(2)->get();
+        return response()->json($clients);
+    }
+
     /**
      * Display the specified resource.
      *

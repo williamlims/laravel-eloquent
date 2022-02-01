@@ -29,6 +29,12 @@ class BillController extends Controller
         return view('bills.create');
     }
 
+    public function between($value1, $value2)
+    {
+        $bills = Bill::whereBetween('value', [$value1, $value2])->get();
+        return response()->json($bills);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
