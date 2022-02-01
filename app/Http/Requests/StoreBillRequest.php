@@ -24,7 +24,14 @@ class StoreBillRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'invoice' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'invoice.required' => 'Uma fatura é obrigatória',
+        ];
+    } 
 }

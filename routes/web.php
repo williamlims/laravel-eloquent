@@ -35,3 +35,7 @@ Route::get('/clients/bills/{client}', [ClientController::class, 'bills']);
 
 Route::get('/bills/expensive/{value}', [ClientController::class, 'expensive']);
 
+Route::get('/bills/create', [BillController::class, 'create']);
+
+Route::post('/bills/store', [BillController::class, 'store']);
+

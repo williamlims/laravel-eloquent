@@ -26,7 +26,7 @@ class BillController extends Controller
      */
     public function create()
     {
-        //
+        return view('bills.create');
     }
 
     /**
@@ -37,7 +37,17 @@ class BillController extends Controller
      */
     public function store(StoreBillRequest $request)
     {
-        //
+        $bill = Bill::create([
+            'invoice' => $request->invoice,
+            'installment' => $request->installment,
+            'value' => $request->value,
+            'client_id' => $request->client_id,
+            'due_date' => $request->due_date,
+            'payment_day' => $request->payment_day
+        ]);
+
+    
+        return response()->json($bill);
     }
 
     /**
