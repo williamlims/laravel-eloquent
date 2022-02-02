@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bill;
 use App\Models\Client;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreBillRequest;
 use App\Http\Requests\UpdateBillRequest;
 
@@ -26,8 +27,9 @@ class BillController extends Controller
      */
     public function create()
     {
-        Auth::login($user);
+        
         return view('bills.create');
+        
     }
 
     public function between($value1, $value2)
@@ -44,9 +46,9 @@ class BillController extends Controller
      */
     public function store(StoreBillRequest $request)
     {
-        //$user = auth()->user();
-        //if(!str_contains($user->name, 'Guest'))
-        //{
+        $user = auth()->user();
+        if(!str_contains($user->name, 'Guest'))
+        {
             $bill = Bill::create([
                 'invoice' => $request->invoice,
                 'installment' => $request->installment,
@@ -57,7 +59,9 @@ class BillController extends Controller
             ]);
 
             return response()->json($bill);
-        //}
+        } else {
+            return response()->json('Não autorizado!');
+        }
     
         
     }

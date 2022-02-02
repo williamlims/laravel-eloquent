@@ -48,3 +48,7 @@ Route::get('/sum/{num1}/{num2}', [CalculadoraController::class, 'sum']);
 
 Route::get('/div/{num1}/{num2}', [CalculadoraController::class, 'div']);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
