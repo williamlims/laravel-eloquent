@@ -32,4 +32,14 @@ class CalculadoraController extends Controller
         return redirect('calculator', compact('response'));
     }
 
+    public function div($num1, $num2)
+    {
+        $response = $this->service->div($num1, $num2);
+        if(!$response['success'])
+        {
+            return back()->with('error', $response['message']);
+        }
+        return redirect('calculator', compact('response'));
+    }
+
 }

@@ -46,3 +46,5 @@ Route::get('/bills/between/{value1}/{value2}', [BillController::class, 'between'
 
 Route::get('/sum/{num1}/{num2}', [CalculadoraController::class, 'sum']);
 
+Route::get('/div/{num1}/{num2}', [CalculadoraController::class, 'div']);
+
