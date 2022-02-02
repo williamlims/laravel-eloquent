@@ -13,7 +13,8 @@ class StoreBillRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        $user = auth()->user();
+        return !str_contains($user->name, 'Guest');
     }
 
     /**

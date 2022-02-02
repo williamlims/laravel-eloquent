@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BillController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\CalculadoraController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,4 +43,6 @@ Route::get('/bills/create', [BillController::class, 'create']);
 Route::post('/bills/store', [BillController::class, 'store']);
 
 Route::get('/bills/between/{value1}/{value2}', [BillController::class, 'between']);
+
+Route::get('/sum/{num1}/{num2}', [CalculadoraController::class, 'sum']);
 
