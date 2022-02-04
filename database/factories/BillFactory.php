@@ -14,12 +14,12 @@ class BillFactory extends Factory
     public function definition()
     {
         return [
-            'invoice' =>$this->faker->randomNumber($nbDigits = 4, $strict = false),
+            'invoice' =>$this->faker->randomNumber(4, false),
             'installment' => $this->faker->randomDigit,
             'client_id' => $this->faker->uuid, 
-            'value' => $this->faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 99),
-            'due_date' => $this->faker->dateTimeBetween($startDate = 'now', $endDate = '+1 week', $timezone = null),
-            'payment_date' => $this->faker->dateTimeBetween($startDate = '-1 week', $endDate = 'now', $timezone = null)
+            'value' => $this->faker->randomFloat(NULL, 0, 99),
+            'due_date' => $this->faker->dateTimeBetween('now', '+1 week', null),
+            'payment_date' => $this->faker->dateTimeBetween('-1 week', 'now', null)
         ];
     }
 }
