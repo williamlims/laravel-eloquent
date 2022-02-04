@@ -15,12 +15,12 @@ class BillFactory extends Factory
     public function definition()
     {
         return [
-            'invoice' =>$this->faker->randomNumber($nbDigits = 4, $strict = false),
+            'invoice' =>$this->faker->randomNumber(4),
             'installment' => $this->faker->randomDigit,
-            'client_id' => lient::factory()->create()->id, 
-            'value' => $this->faker->randomFloat($nbMaxDecimals = 0, $min = 0, $max = 99),
-            'due_date' => $this->faker->dateTimeBetween($startDate = 'now', $endDate = '+1 week', $timezone = null),
-            'payment_date' => $this->faker->dateTimeBetween($startDate = '-1 week', $endDate = 'now', $timezone = null)
+            'client_id' => Client::factory()->create()->id, 
+            'value' => $this->faker->randomFloat(0, 0, 99),
+            'due_date' => $this->faker->dateTimeBetween('now', '+1 week', null),
+            'payment_date' => $this->faker->dateTimeBetween('-1 week', 'now', null)
         ];
     }
 }
