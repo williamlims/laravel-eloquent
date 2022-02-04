@@ -17,7 +17,7 @@ class BillFactory extends Factory
             'invoice' =>$this->faker->randomNumber($nbDigits = 4, $strict = false),
             'installment' => $this->faker->unique()->randomDigit,
             'client_id' => $this->faker->uuid, 
-            'value' => $this->faker->randomFloat($nbMaxDecimals = 0, $min = 0, $max = 100),
+            'value' => $this->faker->randomFloat($nbMaxDecimals = 0, $min = 0, $max = 99),
             'due_date' => $this->faker->dateTimeBetween($startDate = 'now', $endDate = '+1 week', $timezone = null),
             'payment_date' => $this->faker->dateTimeBetween($startDate = '-1 week', $endDate = 'now', $timezone = null)
         ];
